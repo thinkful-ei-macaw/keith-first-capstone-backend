@@ -2,13 +2,13 @@ const knex = require('knex');
 const app = require('../src/app');
 
 const { TEST_DATABASE_URL } = require('../src/config');
-const { makeEmployeesArray, randomEmployee } = require('./employees.fixtures');
+const { makeMonstersArray, randomMonster } = require('./monsters.fixtures');
 
 // set up variables used throughout these tests
-const table_name = 'employees';
-const endpoint = '/employees';
+const table_name = 'monsters';
+const endpoint = '/monsters';
 
-describe('Employees endpoints', () => {
+describe('Monsters endpoints', () => {
   let db;
   before('set up db instance', () => {
     db = knex({
@@ -26,22 +26,22 @@ describe('Employees endpoints', () => {
 
   // GET requests (READ)
   context(`Given there are items in the '${table_name}' table`, () => {
-    const testEmployees = makeEmployeesArray();
+    const testMonsters = makeMonstersArray();
 
     beforeEach(() => {
       return db
         .into(table_name)
-        .insert(testEmployees);
+        .insert(testMonsters);
     });
 
     it(`GET '${endpoint}' responds with 200 with an array of items`, () => {
       return supertest(app)
         .get(endpoint)
-        .expect(200, testEmployees);
+        .expect(200, testMonsters);
     });
 
     it(`GET ${endpoint}/:id responds with 200 with the requested item`, () => {
-      const expected = randomEmployee();
+      const expected = randomMonster();
       const { id } = expected;
       return supertest(app)
         .get(endpoint + '/' + id)

@@ -15,14 +15,14 @@ app.use(helmet());
 app.use(cors());
 
 // import routers
-const employeesRouter = require('./routers/employees-router');
+const monstersRouter = require('./routers/monsters-router');
 const protectedRouter = require('./routers/protected-router');
 
 // set up routes
 const routes = [
   {
     url: '/employees',
-    router: employeesRouter,
+    router: monstersRouter,
   },
   {
     url: '/protected',
@@ -61,5 +61,4 @@ const errorHandler = (error, req, res) => {
 
 app.use(errorHandler);
 
-// the bottom line, literally huh
 module.exports = app;
