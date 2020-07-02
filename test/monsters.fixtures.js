@@ -1,5 +1,5 @@
 /**
- * returns a list of employees for testing
+ * returns a list of monsters for testing
  */
 function makeMonstersArray() {
   return [
@@ -68,7 +68,7 @@ function makeMonstersArray() {
 }
 
 /**
- * returns a random item from the employees array
+ * returns a random item from the monsters array
  */
 function randomMonster() {
   const index = Math.floor(Math.random() * makeMonstersArray().length);
