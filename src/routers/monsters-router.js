@@ -90,7 +90,7 @@ monstersRouter.post('/', bodyParser, (req, res, next) => {
       success: 'false',
       message: 'monster name is required'
     });
-  } else if(!req.body.org) {
+  } else if(!req.body.organization) {
     return res.status(400).send({
       success: 'false',
       message: 'org is required'
@@ -102,7 +102,7 @@ monstersRouter.post('/', bodyParser, (req, res, next) => {
       message: 'diet is required'
     });
   }
-  else if(!req.body.int) {
+  else if(!req.body.intelligence) {
     return res.status(400).send({
       success: 'false',
       message: 'int is required'
@@ -178,10 +178,10 @@ monstersRouter.post('/', bodyParser, (req, res, next) => {
     monster_name: req.body.monster_name,
     climate: req.body.climate,
     frequency: req.body.frequency,
-    organization: req.body.org,
+    organization: req.body.organization,
     activity: req.body.activity,
     diet: req.body.diet,
-    intelligence: req.body.int,
+    intelligence: req.body.intelligence,
     treasure: req.body.treasure, 
     alignment: req.body.alignment,
     appearing: req.body.appearing,
@@ -191,9 +191,9 @@ monstersRouter.post('/', bodyParser, (req, res, next) => {
     thac0: req.body.thac0,
     attacks: req.body.attacks,
     damage: req.body.damage,
-    special_attacks: req.body.sAttack,
-    special_defence: req.body.sDefense,
-    magic_resistance: req.body.mr,
+    special_attacks: req.body.special_attack,
+    special_defence: req.body.special_defence,
+    magic_resistance: req.body.magic_resistance,
     size: req.body.size,
     morale: req.body.morale,
     xp: req.body.xp,
