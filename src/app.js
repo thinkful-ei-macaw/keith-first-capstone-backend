@@ -16,7 +16,6 @@ app.use(cors());
 
 // import routers
 const monstersRouter = require('./routers/monsters-router');
-const protectedRouter = require('./routers/protected-router');
 
 // set up routes
 const routes = [
@@ -24,10 +23,6 @@ const routes = [
     url: '/api',
     router: monstersRouter,
   },
-  {
-    url: '/protected',
-    router: protectedRouter,
-  }
 ];
 
 // add routes to app

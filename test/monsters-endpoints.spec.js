@@ -6,7 +6,7 @@ const { makeMonstersArray, randomMonster } = require('./monsters.fixtures');
 
 // set up variables used throughout these tests
 const table_name = 'monsters';
-const endpoint = '/monsters';
+const endpoint = '/api';
 
 describe('Monsters endpoints', () => {
   let db;

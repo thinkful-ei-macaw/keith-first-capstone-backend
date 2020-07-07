@@ -18,7 +18,7 @@ CREATE TABLE iF NOT EXISTS monsters (
   attacks TEXT NOT NULL,
   damage TEXT NOT NULL,
   special_attacks TEXT,
-  special_defence TEXT,
+  special_defense TEXT,
   magic_resistance TEXT,
   size TEXT NOT NULL,
   morale TEXT,

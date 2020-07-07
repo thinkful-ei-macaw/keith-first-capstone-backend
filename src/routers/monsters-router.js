@@ -9,7 +9,7 @@ monstersRouter.use(express.json());
 const Service = require('../services/service');
 const MonstersService = new Service('monsters');
 
-
+//xss attack protection and sanitization
 const sanitize = monster => {
   return {
     id: monster.id,
@@ -31,7 +31,7 @@ const sanitize = monster => {
     attacks: xss(monster.attacks),
     damage: xss(monster.damage),
     special_attacks: xss(monster.special_attacks),
-    special_defence: xss(monster.special_defence),
+    special_defense: xss(monster.special_defense),
     magic_resistance: xss(monster.magic_resistance),
     size: xss(monster.size),
     morale: xss(monster.morale),
@@ -83,6 +83,8 @@ monstersRouter.get('/:id', (req, res, next) => {
     .catch(next);
 });
 
+
+//checks if required fields are there and if so, posts
 monstersRouter.post('/', bodyParser, (req, res, next) => {
   const db = req.app.get('db');
   if(!req.body.monster_name) {
@@ -93,7 +95,7 @@ monstersRouter.post('/', bodyParser, (req, res, next) => {
   } else if(!req.body.organization) {
     return res.status(400).send({
       success: 'false',
-      message: 'org is required'
+      message: 'organization is required'
     });
   }
   else if(!req.body.diet) {
@@ -192,7 +194,7 @@ monstersRouter.post('/', bodyParser, (req, res, next) => {
     attacks: req.body.attacks,
     damage: req.body.damage,
     special_attacks: req.body.special_attack,
-    special_defence: req.body.special_defence,
+    special_defense: req.body.special_defense,
     magic_resistance: req.body.magic_resistance,
     size: req.body.size,
     morale: req.body.morale,
