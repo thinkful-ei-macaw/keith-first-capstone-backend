@@ -3,7 +3,7 @@ BEGIN;
 TRUNCATE "monsters" RESTART IDENTITY CASCADE;
 INSERT INTO monsters (base_setting, monster_name, climate, frequency, organization, activity, diet, 
 intelligence, treasure, alignment, appearing, ac, movement, hd, thac0, attacks, damage, special_attacks, 
-special_defence, magic_resistance, size, morale, xp, summary, habitat, ecology)
+special_defense, magic_resistance, size, morale, xp, summary, habitat, ecology)
 VALUES
   ('greyhawk', 
   'test monster 1', 
