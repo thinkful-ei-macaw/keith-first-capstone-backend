@@ -1,5 +1,6 @@
 const knex = require('knex');
 const app = require('../src/app');
+const monstersRouter = require ('../src/routers/monsters-router');
 
 const { TEST_DATABASE_URL } = require('../src/config');
 const { makeMonstersArray, randomMonster } = require('./monsters.fixtures');
@@ -8,7 +9,7 @@ const { makeMonstersArray, randomMonster } = require('./monsters.fixtures');
 const table_name = 'monsters';
 const endpoint = '/api';
 
-describe('Monsters endpoints', () => {
+describe('API endpoints', () => {
   let db;
   before('set up db instance', () => {
     db = knex({
